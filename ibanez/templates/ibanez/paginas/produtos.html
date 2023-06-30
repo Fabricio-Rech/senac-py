@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+{% include 'ibanez/parciais/head.html' %}
+<body>
+    {% include 'ibanez/parciais/header.html' %}
+
+    <ul>
+        {% for produto in tipos %}
+        <li><a href="produto/{{produto.tipo}}">{{produto.nome}}</a></li>
+        {% endfor %}
+    </ul>
+
+    <scritpt type="text/javascript" src="{% static 'ibanezz/js/main.js' %}"></script>
+</body>
+</html>
