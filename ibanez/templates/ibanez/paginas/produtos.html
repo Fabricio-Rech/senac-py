@@ -5,12 +5,19 @@
 <body>
     {% include 'ibanez/parciais/header.html' %}
 
-    <ul>
+    <div class="row row-cols-3 d-flex justify-content-center">
         {% for produto in tipos %}
-        <li><a href="produto/{{produto.tipo}}">{{produto.nome}}</a></li>
+        <div class="card m-3" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">{{produto.nome}}</h5>
+            <p class="card-text">{{produto.descricao}}</p>
+            <a href="produto/{{produto.tipo}}" class="btn btn-primary">Checar Item</a>
+            </div>
+        </div>
         {% endfor %}
-    </ul>
-
+    </div>
+    {% include 'ibanez/parciais/footer.html' %}
     <scritpt type="text/javascript" src="{% static 'ibanezz/js/main.js' %}"></script>
 </body>
 </html>
