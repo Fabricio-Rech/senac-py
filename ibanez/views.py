@@ -1,11 +1,11 @@
 from django.shortcuts import render
 
 PRODUTOS = [
-    {'tipo':1, 'nome':'TOD10N', 'descricao':'Tim Henson electric signature guitar'},
-    {'tipo':2, 'nome':'ICHI00', 'descricao':'Ichika Nito electric signature guitar'},
-    {'tipo':3, 'nome':'PIA77', 'descricao':'Steve Vai electric signature guitar'},
-    {'tipo':4, 'nome':'KIKO100', 'descricao':'Kiko Loureiro electric signature guitar'},
-    {'tipo':5, 'nome':'KRYS10', 'descricao':'Scott LePage electric signature guitar'},
+    {'tipo':1, 'nome':'TOD10N', 'descricao':'Tim Henson electric signature guitar', 'emEstoque':True},
+    {'tipo':2, 'nome':'ICHI00', 'descricao':'Ichika Nito electric signature guitar', 'emEstoque':True},
+    {'tipo':3, 'nome':'PIA77', 'descricao':'Steve Vai electric signature guitar', 'emEstoque':True},
+    {'tipo':4, 'nome':'KIKO100', 'descricao':'Kiko Loureiro electric signature guitar', 'emEstoque':True},
+    {'tipo':5, 'nome':'KRYS10', 'descricao':'Scott LePage electric signature guitar', 'emEstoque':True},
 ]
 
 def view_home(request):
