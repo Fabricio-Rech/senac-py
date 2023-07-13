@@ -2,6 +2,7 @@ from django.db import models
 
 class Tipo(models.Model):
     nome = models.CharField(max_length=100)
+    estilo = models.CharField(max_length=50)
     descricao = models.CharField(max_length=500)
     emEstoque = models.BooleanField()
     preco = models.IntegerField()

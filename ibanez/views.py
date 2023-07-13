@@ -5,19 +5,14 @@ def view_home(request):
     return render(request, 'ibanez/paginas/index.html')
 
 def view_produto(request, id):
-    # resultado = {}
-    # PRODUTOS =
-    # for item in PRODUTOS:
-    #     if item['tipo'] == id:
-    #         resultado = item
-    #         break
-    return render(request, 'ibanez/paginas/produto.html', #context=resultado
+    resultado = models.Tipo.objects.get(id = id)
+    return render(request, 'ibanez/paginas/produto.html', context={'dicionario':resultado}
                   )
 
 def view_produtos(request):
-    
-    PRODUTOS = models.tipo.object.all()
-    print(PRODUTOS)
-    # dicionario = {'tipos' : PRODUTOS}
-    return render(request, 'ibanez/paginas/produtos.html', # context=dicionario
+    produtos = []
+    tipos = models.Tipo.objects.filter(emEstoque = True)
+    for i in tipos:
+        produtos.append(i.__dict__)
+    return render(request, 'ibanez/paginas/produtos.html', context={'dicionario':produtos}
                   )

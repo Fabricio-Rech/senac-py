@@ -18,7 +18,6 @@ INSTALLED_APPS = [
     ###
     'home',
     'ibanez',
-    'gibson',
     'fender',
 ]
 

@@ -5,5 +5,6 @@ app_name = 'fender'
 
 urlpatterns = [
     path('', views.view_home, name="home"),
-    path('produto', views.view_produto, name="produto"),
+    path('produtos', views.view_produto, name="produtos"),
+    path('produtos/produto/<int:id>', views.view_produto, name='produto'),
 ]

@@ -1,0 +1,26 @@
+{% extends 'global/base_index.html' %}
+{% load static %}
+
+{% block css_app %}
+    <link rel="stylesheet" href="{% static 'fender/css/main.css' %}" />
+{% endblock css_app%}
+
+{% block titulo %}{% endblock titulo %}
+
+{% block home_url %}
+    "{% url 'fender:home' %}"
+{% endblock home_url %}
+
+{% block produtos_url %}
+    "{% url 'fender:produtos'%}"
+{% endblock produtos_url %}
+
+{% block header_texto %}
+    Fender
+{% endblock header_texto %}
+
+{% block foto %}
+    src="{% static 'global/img/Screenshot_7.png' %}"
+{% endblock foto%}
+
+<scritpt type="text/javascript" src="{% static 'fender/js/main.js' %}"></script>
