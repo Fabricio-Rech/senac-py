@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+{% include 'ibanez/parciais/head.html' %}
+<body>
+    {% include 'ibanez/parciais/header.html' %}
+
+    <div class="row row-cols-3 d-flex justify-content-center">
+        {% for produto in dicionario %}
+            {% if produto.emEstoque == True %}
+                <div class="card m-3" style="width: 18rem;">
+                    <img src="../../imagens/{{ produto.foto }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">{{produto.nome}}</h5>
+                    <p class="card-text">{{produto.descricao}}</p>
+                    <a href="produto/{{produto.id}}" class="btn btn-primary">Checar Item</a>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    {% include 'global/footer.html' %}
+    <scritpt type="text/javascript" src="{% static 'ibanez/js/main.js' %}"></script>
+</body>
+</html>

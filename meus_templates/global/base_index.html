@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'global/css/main.css' %}" />
+    {% block css_app %}{% endblock css_app %}
+    <tittle>{% block titulo %}{% endblock titulo %}</tittle>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="{% url 'inicio:home' %}">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href={% block home_url %}{% endblock home_url %}>{% block header_texto %}{% endblock header_texto %}<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href={% block produtos_url %}{% endblock produtos_url%}>Produtos </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <img {% block foto %}{% endblock foto %} />
+    <!-- <h1>{% block tag_h1 %}HOME{% endblock %}</h1>
+    {% block menu %}
+    <div>Menu do Site</div>
+    {% endblock menu %}
+    {% block texto %}
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, dignissimos. Modi accusantium architecto saepe, laborum adipisci ipsam odio explicabo nihil ex obcaecati necessitatibus hic itaque, culpa labore, nostrum nesciunt dolorum.</p>
+    {% endblock texto%} -->
+
+    {% include 'global/footer.html' %}
+</body>
+</html>
